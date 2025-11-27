@@ -291,4 +291,15 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
   ></script>
+
+  <script>
+    (function () {
+      if (!location.host.startsWith("localhost")) {
+        const script = document.createElement("script");
+        script.src = "/node_modules/@vercel/analytics/dist/script.js";
+        script.defer = true;
+        document.head.appendChild(script);
+      }
+    })();
+  </script>
 </html>
