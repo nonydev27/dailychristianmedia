@@ -541,7 +541,7 @@ p {
   }
 
   .navbar-secondary a {
-    margin: 16px; /* Minimal vertical margin and no horizontal margin */
+    margin: 12px; /* Minimal vertical margin and no horizontal margin */
   }
 
   .scripture-box.active {
