@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DCM| Come Learn The Word</title>
+
+    <link
+      rel="icon"
+      href="./images/content/dcm.jpg"
+      sizes="16x16"
+      type="image/jpg"
+    />
+
+    <style>
+      ::-webkit-scrollbar-thumb {
+        background-color: #888;
+      }
+
+      .scrolled::-webkit-scrollbar-thumb {
+        background-color: #f1f1f1;
+      }
+    </style>
+    <!--Bootstrap CSS-->
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+
+    <!--Inter Font (Google Fonts)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="navbar navbar-primary">
+      <nav class="nav-container d-flex justify-content-between w-100">
+        <a href="#" aria-disabled="true">DCM</a>
+        <span class="dcm-text">The Daily Christian Media</span>
+      </nav>
+    </div>
+
+    <div class="navbar navbar-secondary">
+      <nav>
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Team">team</a>
+        <a href="#ContactUs">contact us</a>
+      </nav>
+    </div>
+
+    <div id="Home" class="img-container">
+      <img
+        src="https://images.pexels.com/photos/1666816/pexels-photo-1666816.jpeg?cs=srgb&dl=pexels-shelaghmurphy-1666816.jpg&fm=jpg"
+        alt=""
+        width=""
+        class="img-fluid"
+      />
+
+      <div class="img-text">
+        <h2>
+          "You are not who others say you are. You are who God says you are" -
+          Nonydev
+        </h2>
+
+        <div class="modal-container">
+          <button
+            class="btn btn-outline-warning"
+            type="button"
+            id="devotionButton"
+          >
+            Read today's devotion
+          </button>
+
+          <div id="backdrop" class="backdrop"></div>
+
+          <div id="scripturePopout" class="scripture-box">
+            <h3>📖 Today's Scripture</h3>
+            <p>
+              "For God so loved the world that he gave his one and only Son,
+              that whoever believes in him shall not perish but have eternal
+              life."
+            </p>
+            <p class="source">- John 3:16</p>
+            <button class="close-btn" id="closeButton">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about div-section" id="About">
+      <div class="about-mission container">
+        <h1>Our Mission 🎯</h1>
+        <p class="about-text">
+          To illuminate lives through the truth of Christ, delivered daily
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <h1>Who We Are</h1>
+          <p>
+            The Daily Christian Media (DCM) is a ministry dedicated to
+            proclaiming the unshakeable hope found in Jesus Christ. We believe
+            the message of the Gospel is relevant, powerful, and essential for
+            every person, every day.
+          </p>
+        </div>
+
+        <div class="col">
+          <h1>What We Do</h1>
+          <p>
+            We create and curate diverse, high-quality digital media—including
+            devotionals, theological articles, video sermons, and inspirational
+            stories—to encourage, equip, and challenge believers and seekers
+            alike in their faith journey.
+          </p>
+        </div>
+
+        <div class="col">
+          <h1>Our Commitment</h1>
+          <p>
+            We are committed to biblical accuracy, theological depth, and
+            cultural relevance. We strive to be a reliable, daily source of
+            spiritual nourishment, guiding our audience toward a deeper
+            relationship with God.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="team div-section scrolled" id="Team">
+      <div class="row">
+        <div class="col-md-3">
+          <img
+            src="https://visafoto.com/img/passport-photo-original7.jpg"
+            alt=""
+            class="img-fluid teamlead-img team-img-hidden"
+          />
+          <h1 class="teamlead-title hidden">Yabiri Emmanuel</h1>
+          <p class="teamlead-info hidden">CEO, Founder</p>
+        </div>
+
+        <div class="col-md-3">
+          <img
+            src="https://tse3.mm.bing.net/th/id/OIP.TqJmp0It6KEf2h9bk2-wBQHaHa?pid=ImgDet&w=183&h=183&c=7&dpr=1.5&o=7&rm=3"
+            alt=""
+            class="img-fluid teamlead-img team-img-hidden"
+          />
+          <h1 class="teamlead-title hidden">Djansi Karl</h1>
+          <p class="teamlead-info hidden">Co-Founder</p>
+        </div>
+
+        <div class="col-md-3">
+          <img
+            src="https://tse2.mm.bing.net/th/id/OIP.-845dRU_wQ7GPmpE0UeHbAHaHa?pid=ImgDet&w=180&h=180&c=7&dpr=1.5&o=7&rm=3"
+            alt=""
+            class="img-fluid teamlead-img team-img-hidden"
+          />
+          <h1 class="teamlead-title hidden">Barnes Orleans</h1>
+          <p class="teamlead-info hidden">Ministerial Lead</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <img
+            src="https://tse2.mm.bing.net/th/id/OIP.yNqKIS-oSBB5P8W1aiZ3JAHaHa?pid=ImgDet&w=180&h=180&c=7&dpr=1.5&o=7&rm=3"
+            alt=""
+            class="img-fluid teamlead-img team-img-hidden"
+          />
+          <h1 class="teamlead-title hidden">Totimeh Jesse</h1>
+          <p class="teamlead-info hidden">P.R.O</p>
+        </div>
+
+        <div class="col-md-3">
+          <img
+            src="data:image/webp;base64,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"
+            alt=""
+            class="img-fluid teamlead-img team-img-hidden"
+          />
+          <h1 class="teamlead-title hidden">Johnny Mamle</h1>
+          <p class="teamlead-info hidden">Prayer Secretary</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-us div-section" id="ContactUs">
+      <div class="row">
+        <div class="col-auto form-column">
+          <form
+            action="https://formspree.io/f/xangydvw"
+            class="glass-form"
+            method="post"
+          >
+            <div class="row g-3">
+              <div class="col-auto">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  class="form-control"
+                />
+              </div>
+
+              <div class="col-auto">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  class="form-control"
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12 wide-col">
+                <label for="message">Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Your Message"
+                  class="form-control"
+                  rows="5"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="col">
+              <label for="newsletter"> &nbsp; &nbsp;Receive Newsletters?</label>
+              <input type="checkbox" id="newsletter" />
+            </div>
+
+            <button type="submit" class="btn btn-primary col-12">
+              Send Message
+              <img src="./images/content/pplane.png" alt="" width="30px" />
+            </button>
+          </form>
+        </div>
+
+        <div class="col-auto social-column">
+          <h1 class="social-heading">Connect with us via social media</h1>
+
+          <div class="social-icons-container">
+            <a href="#" class="social-icon-wrapper whatsapp-wrapper">
+              <img
+                src="./images/ui/whatsapp.svg"
+                alt="whatsapp"
+                class="social-icon"
+              />
+            </a>
+            <a href="#" class="social-icon-wrapper snapchat-wrapper">
+              <img
+                src="./images/ui/snapchat.svg"
+                alt="snapchat"
+                class="social-icon"
+              />
+            </a>
+            <a href="#" class="social-icon-wrapper x-wrapper">
+              <img src="./images/ui/x.svg" alt="x" class="social-icon" />
+            </a>
+            <a href="#" class="social-icon-wrapper instagram-wrapper">
+              <img
+                src="./images/ui/instagram.svg"
+                alt="instagram"
+                class="social-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">Copyright©️ DCM 2025</div>
+  </body>
+  <script src="./js/main.js"></script>
+</html>

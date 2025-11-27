@@ -1,0 +1,498 @@
+/* GLOBAL RESETS AND FIX FOR SCROLLBARS */
+
+/* GLOBAL RESETS AND FIX FOR SCROLLBARS */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.navbar-primary {
+  background-color: #ffc107;
+  justify-content: space-between;
+  padding: 7px;
+  display: flex;
+  /* Make sure no 'position: fixed' or 'position: sticky' is here */
+}
+
+/* .nav-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+} */
+
+.navbar-secondary {
+  background-color: rgb(230, 218, 218);
+  justify-content: right;
+  padding: 7px;
+
+  /* --- KEY CHANGE: Use sticky instead of fixed --- */
+  position: sticky; /* Follows the scroll until it hits the 'top' position */
+  top: 0; /* Locks it to the top of the viewport */
+  width: 100%; /* Ensure full width */
+  z-index: 1030; /* Keeps it above other content */
+}
+
+.navbar-primary a {
+  color: black;
+  text-decoration: none;
+}
+
+.navbar-secondary a {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* margin-left: 35px; */
+  margin: 16px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  transition-duration: 2s;
+}
+
+.navbar-secondary a:hover {
+  color: #f1900a83;
+  transition: 0ms;
+}
+
+.dcm-text {
+  justify-content: right;
+  color: black;
+}
+
+.img-container {
+  /* 1. KEY STEP: Makes this the reference point for absolute positioning */
+  position: relative;
+  width: 100%; /* Makes the image responsive */
+  overflow: hidden;
+}
+
+.img-container img {
+  /* Ensures the image fills the container */
+  display: block;
+  width: 100%;
+  opacity: 90%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.img-text {
+  /* 2. KEY STEP: Overlays the text onto the image */
+  position: absolute;
+
+  /* Place it in the center (adjust these values to position it) */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the text perfectly */
+
+  /* Style for readability */
+  color: white;
+  max-width: 80%;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  padding: 10px;
+}
+
+.div-section div {
+  margin: auto;
+}
+
+.div-section h1 {
+  color: #ffc107;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  font-size: 25px;
+  margin: 15px;
+}
+
+.about,
+.contact-us {
+  position: relative;
+  width: 100%; /* Makes the image responsive */
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  border: none;
+  opacity: 90%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.contact-us {
+  margin-top: 40px;
+}
+.about-text {
+  text-align: center;
+}
+
+p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#About,
+#Team {
+  scroll-margin-top: 37px;
+}
+.team {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  opacity: 90%;
+  border: none;
+  object-fit: cover;
+  background-color: rgb(230, 218, 218);
+  /* background-image: url("https://static.vecteezy.com/system/resources/thumbnails/014/195/534/original/colorful-confetti-particles-falling-over-white-background-confetti-falling-celebration-animation-party-bg-gold-realistic-confetti-explosions-birthday-party-confetti-falling-free-video.jpg"); */
+}
+
+.team img {
+  width: 100%;
+  margin-top: 20px;
+  border: 5px solid orange;
+  border-radius: 50%;
+}
+.team .teamlead-title {
+  color: black;
+}
+
+.team .teamlead-info {
+  text-align: center;
+}
+
+.footer {
+  background-color: #ffc107;
+  padding: 12px;
+  text-align: center;
+}
+
+/* ::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffc107;
+} */
+/* 
+
+
+
+/* CSS */
+.hidden {
+  /* Hides the element */
+  opacity: 0;
+  /* Moves the element down by 20 pixels */
+  transform: translateY(20px);
+}
+
+.teamlead-title,
+.teamlead-info {
+  /* Apply a smooth transition to the opacity and position */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  /* You can add a slight delay to the paragraphs to make the title appear first */
+  transition-delay: 0.3s;
+}
+
+/* The state that makes the element appear (JavaScript will add this) */
+.reveal {
+  opacity: 1;
+  transform: translateY(0); /* Returns to original position */
+}
+
+/* Styling for the scripture pop-up box */
+.scripture-box {
+  /* Initially hide the box */
+  display: none;
+
+  /* Center it on the screen and position it above other content */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Style the box itself */
+  padding: 30px;
+  background-color: white;
+  border: 3px solid #ffc107; /* Matches your button color */
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  z-index: 1050; /* High z-index to ensure it is always on top */
+
+  /* Animation for the "pop-out" effect */
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8); /* Start smaller */
+}
+
+/* Style for the active (visible) state */
+.scripture-box.active {
+  display: block; /* Show the box */
+  opacity: 1; /* Fully visible */
+  transform: translate(-50%, -50%) scale(1); /* Pop out to full size */
+}
+
+/* Styling for the content and close button (optional) */
+.scripture-box h3 {
+  color: #ffc107;
+  margin-top: 0;
+}
+
+.scripture-box .source {
+  font-style: italic;
+  text-align: right;
+  margin-top: 15px;
+}
+
+.close-btn {
+  float: right;
+  background: #ffc107;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* --- NEW: Backdrop Styling --- */
+.backdrop {
+  /* Initially hide the backdrop */
+  display: none;
+
+  /* Cover the entire screen */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Semi-transparent black color */
+  background-color: rgba(255, 0, 0, 0.7);
+
+  /* Ensure it is behind the pop-up but above everything else */
+  z-index: 1040;
+
+  /* Animation for the fade-in effect */
+  opacity: -2;
+  transition: opacity 0.5s ease-in-out; /* Backdrop fade duration */
+}
+
+/* --- UPDATED: Scripture Box Styling (Slower Transition) --- */
+.scripture-box {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* Start smaller and slightly transparent */
+  transform: translate(-50%, -50%) scale(0.8);
+
+  padding: 30px;
+  background-color: rgb(0, 0, 0);
+  border: 3px solid #ffc107;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+  max-width: 400px;
+  z-index: 1050;
+  opacity: 0;
+
+  /* 💥 KEY CHANGE: Slower transition for a smooth, slow pop-out */
+  transition: all 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* The cubic-bezier value gives it a subtle, bouncy "pop" */
+}
+
+/* --- UPDATED: Active States --- */
+.scripture-box.active {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.backdrop.active {
+  display: block;
+  opacity: 1;
+}
+
+.glass-form {
+  padding: 30px;
+  border-radius: 20px;
+
+  /* 1. Glass Background & Blur */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  /* 2. THE GLASS BORDER */
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  color: rgb(0, 0, 0); /* Important: Makes text and labels visible */
+}
+
+/* Ensure placeholders are visible */
+.glass-form ::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Ensure labels are visible */
+.glass-form label {
+  color: rgb(0, 0, 0);
+}
+/* --- Social Media Section Styling --- */
+.social-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.social-heading {
+  color: var(--primary-color, #ffd700);
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+/* Container for all icon wrappers */
+.social-icons-container {
+  display: flex;
+  gap: 20px; /* Slightly reduced gap for background circles */
+  margin-top: 20px;
+}
+
+/* --- ICON WRAPPER BASE STYLING (For Backgrounds and Hover) --- */
+.social-icon-wrapper {
+  width: 50px; /* Larger to accommodate background */
+  height: 50px;
+  display: flex; /* Use flex to center the icon inside */
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Makes it circular */
+  background-color: transparent; /* Default transparent background */
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Cool animation bezier curve */
+  /* Initial subtle shadow for depth */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none; /* Remove underline from anchor */
+}
+
+/* --- ICON IMAGE STYLING (Inside the Wrapper) --- */
+.social-icon {
+  width: 28px; /* Slightly smaller icon to fit in wrapper */
+  height: 28px;
+  display: block;
+  filter: grayscale(100%) brightness(0); /* Default to white/black icon */
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- HOVER EFFECTS (Backgrounds & Icon Color) --- */
+
+/* Base hover for all wrappers */
+.social-icon-wrapper:hover {
+  transform: translateY(-5px) scale(1.1); /* Lift up and slightly enlarge */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+
+/* Hover effect for the icon image inside the wrapper */
+.social-icon-wrapper:hover .social-icon {
+  filter: brightness(200%); /* Make icon bright white on hover */
+}
+
+/* WhatsApp Hover */
+.whatsapp-wrapper:hover {
+  background-color: #25d366; /* WhatsApp green */
+}
+
+/* Snapchat Hover */
+.snapchat-wrapper:hover {
+  background-color: #fffc00; /* Snapchat yellow */
+}
+
+/* X (Twitter) Hover */
+.x-wrapper:hover {
+  background-color: #000000; /* X black */
+}
+
+/* Instagram Hover */
+.instagram-wrapper:hover {
+  /* Instagram gradient colors - simplified to a common vibrant purple/pink */
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+}
+
+/* --- ICON IMAGE STYLING (Inside the Wrapper) --- */
+.social-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  /* General filter removed here, let's control per-icon */
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- HOVER EFFECTS (Backgrounds & Icon Color) --- */
+
+/* Base hover for all wrappers (Animation remains the same) */
+.social-icon-wrapper:hover {
+  transform: translateY(-5px) scale(1.1); /* Lift up and slightly enlarge */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* WhatsApp Hover - Icon filter is NOT needed, as it is already white */
+.whatsapp-wrapper:hover {
+  background-color: #25d366; /* WhatsApp green */
+}
+
+/* --- Snapchat, X, Instagram Hover (Need to turn the icon WHITE) --- */
+.snapchat-wrapper:hover .social-icon,
+.x-wrapper:hover .social-icon,
+.instagram-wrapper:hover .social-icon {
+  /* Assuming these icons are black SVGs initially, this turns them white */
+  filter: brightness(200%);
+}
+
+/* Snapchat Hover */
+.snapchat-wrapper:hover {
+  background-color: #fffc00; /* Snapchat yellow */
+}
+
+/* X (Twitter) Hover */
+.x-wrapper:hover {
+  background-color: #ffffff; /* X black */
+}
+
+/* Instagram Hover */
+.instagram-wrapper:hover {
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+}
+
+/* --- ICON WRAPPER BASE STYLING --- */
+.social-icon-wrapper {
+  /* ... other styles ... */
+  color: #000000; /* Default icon color (Black) */
+  /* ... other styles ... */
+}
+
+/* --- HOVER EFFECTS --- */
+
+/* Hover for Snapchat, X, Instagram (Icons that need to turn WHITE) */
+.snapchat-wrapper:hover,
+.x-wrapper:hover,
+.instagram-wrapper:hover {
+  color: white; /* This will turn the 'currentColor' in the SVG white */
+}
+/* Note: You may still need to use the `filter` for the WhatsApp icon if its SVG is complex. */
