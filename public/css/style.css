@@ -256,6 +256,12 @@ p {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.close-btn:hover {
+  color: #ffc107;
+  background-color: whitesmoke;
+  transition: 0.22s ease-in;
+}
 /* --- NEW: Backdrop Styling --- */
 .backdrop {
   /* Initially hide the backdrop */
@@ -531,13 +537,18 @@ p {
 
   /* Secondary Nav: Make links stack vertically or reduce margin significantly */
   .navbar-secondary nav {
-    display: flex;
-    flex-direction: column; /* Stack the links vertically */
     align-items: center; /* Center them horizontally */
   }
 
   .navbar-secondary a {
-    margin: 5px 0; /* Minimal vertical margin and no horizontal margin */
+    margin: 16px; /* Minimal vertical margin and no horizontal margin */
+  }
+
+  .scripture-box.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.5);
+    width: 500px;
   }
 
   /* --- HERO/IMAGE SECTION --- */
@@ -607,101 +618,5 @@ p {
   /* Center the social icons container */
   .social-icons-container {
     justify-content: center;
-  }
-}
-
-/*ham*/
-/* --- HAMBURGER MENU STYLES (Always hidden on Desktop) --- */
-.menu-toggle {
-  display: none; /* Hide by default */
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1060; /* Ensure it's above other content */
-}
-
-/* Style for the three bars */
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  background-color: black; /* Matches your text color */
-  transition: all 0.3s ease-in-out;
-}
-
-/* --- SECONDARY NAVBAR BASE ADJUSTMENT --- */
-.navbar-secondary {
-  /* Ensure the nav container uses flex to align the button/links */
-  display: flex;
-  justify-content: flex-end; /* Links align to the right */
-  align-items: center;
-  padding: 7px 15px; /* Add some side padding */
-  /* ... keep existing sticky and z-index properties ... */
-}
-
-/* Ensure the links container doesn't have the flex properties now */
-.navbar-secondary nav.nav-links {
-  display: flex; /* Display links side-by-side on desktop */
-}
-
-@media (max-width: 768px) {
-  /* --- NAVIGATION ADJUSTMENTS FOR MOBILE --- */
-  .navbar-secondary {
-    /* Align the button and hidden menu items */
-    justify-content: space-between;
-  }
-
-  /* 1. Show the hamburger button on mobile */
-  .menu-toggle {
-    display: block;
-  }
-
-  /* 2. Style the navigation links container for mobile */
-  .navbar-secondary .nav-links {
-    /* Hide the menu by default */
-    display: none;
-
-    /* Full-screen menu overlay */
-    position: fixed;
-    top: 40px; /* Below the primary bar */
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgb(230, 218, 218); /* Matches your secondary nav color */
-    flex-direction: column; /* Stack links vertically */
-    align-items: center;
-    padding-top: 30px;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%); /* Start off-screen */
-  }
-
-  /* 3. State when the menu is active/open */
-  .navbar-secondary .nav-links.active {
-    display: flex; /* Show the container */
-    transform: translateX(0); /* Slide into view */
-  }
-
-  /* 4. Ensure links are clickable and spaced correctly */
-  .navbar-secondary .nav-links a {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    padding: 10px;
-    width: 80%; /* Makes links easier to tap */
-    text-align: center;
-  }
-
-  /* Optional: Hamburger to 'X' animation */
-  .menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .menu-toggle.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
   }
 }
