@@ -496,3 +496,212 @@ p {
   color: white; /* This will turn the 'currentColor' in the SVG white */
 }
 /* Note: You may still need to use the `filter` for the WhatsApp icon if its SVG is complex. */
+
+/*media queries*/
+@media (max-width: 992px) {
+  /* --- ABOUT SECTION --- */
+  /* Ensure the 'about' columns stack vertically instead of staying side-by-side */
+  .about .row > div.col {
+    flex: 0 0 100%; /* Take up the full width */
+    max-width: 100%;
+    margin-bottom: 30px; /* Add spacing between the stacked columns */
+  }
+
+  /* Reduce the padding on the contact form to give content more space */
+  .contact-us .form-column {
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+
+  /* --- TEAM SECTION --- */
+  /* Make Team columns stack on smaller screens too */
+  .team .row > div.col-md-3 {
+    flex: 0 0 50%; /* Make them two-in-a-row */
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* --- NAVIGATION --- */
+  /* Primary Nav: Adjust font size */
+  .navbar-primary a,
+  .dcm-text {
+    font-size: 0.9rem;
+  }
+
+  /* Secondary Nav: Make links stack vertically or reduce margin significantly */
+  .navbar-secondary nav {
+    display: flex;
+    flex-direction: column; /* Stack the links vertically */
+    align-items: center; /* Center them horizontally */
+  }
+
+  .navbar-secondary a {
+    margin: 5px 0; /* Minimal vertical margin and no horizontal margin */
+  }
+
+  /* --- HERO/IMAGE SECTION --- */
+  /* Reduce the image height for mobile */
+  .img-container img {
+    height: 350px;
+  }
+
+  /* Reduce font size of the quote */
+  .img-text h2 {
+    font-size: 1.2rem;
+  }
+
+  /* --- ABOUT SECTION --- */
+  /* Reduce height and padding */
+  .about {
+    height: auto; /* Allow content to dictate height */
+    padding-top: 20px;
+  }
+
+  /* Make the columns stack fully vertically (100% width) */
+  .about .row > div.col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  /* --- TEAM SECTION --- */
+  .team {
+    height: auto;
+  }
+  /* Make Team members stack fully vertically (one per row) */
+  .team .row > div.col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 30px; /* Add horizontal padding for breathing room */
+  }
+  .team img {
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* --- CONTACT SECTION --- */
+  .contact-us {
+    height: auto;
+    padding-bottom: 40px;
+  }
+  /* Contact form columns stack vertically */
+  .contact-us .row {
+    flex-direction: column;
+  }
+
+  .contact-us .col-auto.form-column,
+  .contact-us .col-auto.social-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Ensure form inputs take full width on mobile */
+  .glass-form .col-auto,
+  .glass-form .col-12 {
+    width: 100%;
+  }
+
+  /* Center the social icons container */
+  .social-icons-container {
+    justify-content: center;
+  }
+}
+
+/*ham*/
+/* --- HAMBURGER MENU STYLES (Always hidden on Desktop) --- */
+.menu-toggle {
+  display: none; /* Hide by default */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1060; /* Ensure it's above other content */
+}
+
+/* Style for the three bars */
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: black; /* Matches your text color */
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- SECONDARY NAVBAR BASE ADJUSTMENT --- */
+.navbar-secondary {
+  /* Ensure the nav container uses flex to align the button/links */
+  display: flex;
+  justify-content: flex-end; /* Links align to the right */
+  align-items: center;
+  padding: 7px 15px; /* Add some side padding */
+  /* ... keep existing sticky and z-index properties ... */
+}
+
+/* Ensure the links container doesn't have the flex properties now */
+.navbar-secondary nav.nav-links {
+  display: flex; /* Display links side-by-side on desktop */
+}
+
+@media (max-width: 768px) {
+  /* --- NAVIGATION ADJUSTMENTS FOR MOBILE --- */
+  .navbar-secondary {
+    /* Align the button and hidden menu items */
+    justify-content: space-between;
+  }
+
+  /* 1. Show the hamburger button on mobile */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* 2. Style the navigation links container for mobile */
+  .navbar-secondary .nav-links {
+    /* Hide the menu by default */
+    display: none;
+
+    /* Full-screen menu overlay */
+    position: fixed;
+    top: 40px; /* Below the primary bar */
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(230, 218, 218); /* Matches your secondary nav color */
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+    padding-top: 30px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Start off-screen */
+  }
+
+  /* 3. State when the menu is active/open */
+  .navbar-secondary .nav-links.active {
+    display: flex; /* Show the container */
+    transform: translateX(0); /* Slide into view */
+  }
+
+  /* 4. Ensure links are clickable and spaced correctly */
+  .navbar-secondary .nav-links a {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    padding: 10px;
+    width: 80%; /* Makes links easier to tap */
+    text-align: center;
+  }
+
+  /* Optional: Hamburger to 'X' animation */
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

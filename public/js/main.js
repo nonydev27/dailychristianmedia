@@ -70,3 +70,33 @@ function closePopout() {
 devotionButton.addEventListener("click", openPopout);
 closeButton.addEventListener("click", closePopout);
 backdrop.addEventListener("click", closePopout); // NEW: Closes when backdrop is clicked
+
+// --- Hamburger Menu Logic ---
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  // Toggle the 'active' class on both the button and the links container
+  menuToggle.classList.toggle("active");
+  navLinks.classList.toggle("active");
+
+  // Optional: Lock body scroll when menu is open (good practice for mobile menus)
+  if (navLinks.classList.contains("active")) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+});
+
+// Optional: Close menu when a link is clicked
+const links = navLinks.querySelectorAll("a");
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    // Only close if we are in mobile view (i.e., the menu is open)
+    if (navLinks.classList.contains("active")) {
+      menuToggle.classList.remove("active");
+      navLinks.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+});
