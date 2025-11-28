@@ -52,36 +52,3 @@ function closePopout() {
 devotionButton.addEventListener("click", openPopout);
 closeButton.addEventListener("click", closePopout);
 backdrop.addEventListener("click", closePopout);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const primaryNavbar = document.querySelector(".navbar-primary");
-  const secondaryNavbar = document.getElementById("secondary-navbar");
-  const teamSection = document.getElementById("Team");
-
-  if (!primaryNavbar || !secondaryNavbar || !teamSection) {
-    console.error("One or more required elements were not found.");
-    return;
-  }
-
-  const activeClass = "navbar-color-change";
-
-  const totalNavbarHeight =
-    primaryNavbar.offsetHeight + secondaryNavbar.offsetHeight;
-
-  const options = {
-    rootMargin: `-${totalNavbarHeight}px 0px 0px 0px`,
-    threshold: 0,
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.boundingClientRect.top < 0) {
-        secondaryNavbar.classList.add(activeClass);
-      } else {
-        secondaryNavbar.classList.remove(activeClass);
-      }
-    });
-  }, options);
-
-  observer.observe(teamSection);
-});
