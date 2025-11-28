@@ -34,7 +34,7 @@ body {
 }
 
 .navbar-primary a {
-  color: black;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -133,6 +133,15 @@ p {
 #Team {
   scroll-margin-top: 37px;
 }
+
+.team-members-header {
+  text-transform: uppercase;
+  color: black !important;
+}
+
+#ContactUs {
+  scroll-margin-top: 80px;
+}
 .team {
   position: relative;
   overflow: hidden;
@@ -182,60 +191,49 @@ p {
 
 /* CSS */
 .hidden {
-  /* Hides the element */
   opacity: 0;
-  /* Moves the element down by 20 pixels */
+
   transform: translateY(20px);
 }
 
 .teamlead-title,
 .teamlead-info {
-  /* Apply a smooth transition to the opacity and position */
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  /* You can add a slight delay to the paragraphs to make the title appear first */
   transition-delay: 0.3s;
 }
 
-/* The state that makes the element appear (JavaScript will add this) */
 .reveal {
   opacity: 1;
-  transform: translateY(0); /* Returns to original position */
+  transform: translateY(0);
 }
 
-/* Styling for the scripture pop-up box */
 .scripture-box {
-  /* Initially hide the box */
   display: none;
 
-  /* Center it on the screen and position it above other content */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  /* Style the box itself */
   padding: 30px;
   background-color: white;
-  border: 3px solid #ffc107; /* Matches your button color */
+  border: 3px solid #ffc107;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
   max-width: 400px;
-  z-index: 1050; /* High z-index to ensure it is always on top */
+  z-index: 1050;
 
-  /* Animation for the "pop-out" effect */
   transition: all 0.3s ease-in-out;
   opacity: 0;
-  transform: translate(-50%, -50%) scale(0.8); /* Start smaller */
+  transform: translate(-50%, -50%) scale(0.8);
 }
 
-/* Style for the active (visible) state */
 .scripture-box.active {
-  display: block; /* Show the box */
-  opacity: 1; /* Fully visible */
-  transform: translate(-50%, -50%) scale(1); /* Pop out to full size */
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
-/* Styling for the content and close button (optional) */
 .scripture-box h3 {
   color: #ffc107;
   margin-top: 0;
@@ -262,36 +260,29 @@ p {
   background-color: whitesmoke;
   transition: 0.22s ease-in;
 }
-/* --- NEW: Backdrop Styling --- */
+
 .backdrop {
-  /* Initially hide the backdrop */
   display: none;
 
-  /* Cover the entire screen */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 
-  /* Semi-transparent black color */
   background-color: rgba(255, 0, 0, 0.7);
 
-  /* Ensure it is behind the pop-up but above everything else */
   z-index: 1040;
 
-  /* Animation for the fade-in effect */
   opacity: -2;
-  transition: opacity 0.5s ease-in-out; /* Backdrop fade duration */
+  transition: opacity 0.5s ease-in-out;
 }
 
-/* --- UPDATED: Scripture Box Styling (Slower Transition) --- */
 .scripture-box {
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
-  /* Start smaller and slightly transparent */
   transform: translate(-50%, -50%) scale(0.8);
 
   padding: 30px;
@@ -303,12 +294,9 @@ p {
   z-index: 1050;
   opacity: 0;
 
-  /* 💥 KEY CHANGE: Slower transition for a smooth, slow pop-out */
   transition: all 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  /* The cubic-bezier value gives it a subtle, bouncy "pop" */
 }
 
-/* --- UPDATED: Active States --- */
 .scripture-box.active {
   display: block;
   opacity: 1;
@@ -324,28 +312,24 @@ p {
   padding: 30px;
   border-radius: 20px;
 
-  /* 1. Glass Background & Blur */
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 
-  /* 2. THE GLASS BORDER */
   border: 1px solid rgba(255, 0, 0, 0.3);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-  color: rgb(0, 0, 0); /* Important: Makes text and labels visible */
+  color: rgb(0, 0, 0);
 }
 
-/* Ensure placeholders are visible */
 .glass-form ::placeholder {
   color: rgba(0, 0, 0, 0.7);
 }
 
-/* Ensure labels are visible */
 .glass-form label {
   color: rgb(0, 0, 0);
 }
-/* --- Social Media Section Styling --- */
+
 .social-column {
   display: flex;
   flex-direction: column;
@@ -362,119 +346,86 @@ p {
   letter-spacing: 1px;
 }
 
-/* Container for all icon wrappers */
 .social-icons-container {
   display: flex;
-  gap: 20px; /* Slightly reduced gap for background circles */
+  gap: 20px;
   margin-top: 20px;
 }
 
-/* --- ICON WRAPPER BASE STYLING (For Backgrounds and Hover) --- */
 .social-icon-wrapper {
-  width: 50px; /* Larger to accommodate background */
+  width: 50px;
   height: 50px;
-  display: flex; /* Use flex to center the icon inside */
+  display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%; /* Makes it circular */
-  background-color: transparent; /* Default transparent background */
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Cool animation bezier curve */
-  /* Initial subtle shadow for depth */
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-decoration: none; /* Remove underline from anchor */
+  text-decoration: none;
 }
 
-/* --- ICON IMAGE STYLING (Inside the Wrapper) --- */
-.social-icon {
-  width: 28px; /* Slightly smaller icon to fit in wrapper */
-  height: 28px;
-  display: block;
-  filter: grayscale(100%) brightness(0); /* Default to white/black icon */
-  transition: all 0.3s ease-in-out;
-}
-
-/* --- HOVER EFFECTS (Backgrounds & Icon Color) --- */
-
-/* Base hover for all wrappers */
-.social-icon-wrapper:hover {
-  transform: translateY(-5px) scale(1.1); /* Lift up and slightly enlarge */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow */
-}
-
-/* Hover effect for the icon image inside the wrapper */
-.social-icon-wrapper:hover .social-icon {
-  filter: brightness(200%); /* Make icon bright white on hover */
-}
-
-/* WhatsApp Hover */
-.whatsapp-wrapper:hover {
-  background-color: #25d366; /* WhatsApp green */
-}
-
-/* Snapchat Hover */
-.snapchat-wrapper:hover {
-  background-color: #fffc00; /* Snapchat yellow */
-}
-
-/* X (Twitter) Hover */
-.x-wrapper:hover {
-  background-color: #000000; /* X black */
-}
-
-/* Instagram Hover */
-.instagram-wrapper:hover {
-  /* Instagram gradient colors - simplified to a common vibrant purple/pink */
-  background: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-}
-
-/* --- ICON IMAGE STYLING (Inside the Wrapper) --- */
 .social-icon {
   width: 28px;
   height: 28px;
   display: block;
-  /* General filter removed here, let's control per-icon */
+  filter: grayscale(100%) brightness(0);
   transition: all 0.3s ease-in-out;
 }
 
-/* --- HOVER EFFECTS (Backgrounds & Icon Color) --- */
-
-/* Base hover for all wrappers (Animation remains the same) */
 .social-icon-wrapper:hover {
-  transform: translateY(-5px) scale(1.1); /* Lift up and slightly enlarge */
+  transform: translateY(-5px) scale(1.1);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* WhatsApp Hover - Icon filter is NOT needed, as it is already white */
-.whatsapp-wrapper:hover {
-  background-color: #25d366; /* WhatsApp green */
-}
-
-/* --- Snapchat, X, Instagram Hover (Need to turn the icon WHITE) --- */
-.snapchat-wrapper:hover .social-icon,
-.x-wrapper:hover .social-icon,
-.instagram-wrapper:hover .social-icon {
-  /* Assuming these icons are black SVGs initially, this turns them white */
+.social-icon-wrapper:hover .social-icon {
   filter: brightness(200%);
 }
 
-/* Snapchat Hover */
+.whatsapp-wrapper:hover {
+  background-color: #25d366;
+}
+
 .snapchat-wrapper:hover {
-  background-color: #fffc00; /* Snapchat yellow */
+  background-color: #fffc00;
 }
 
-/* X (Twitter) Hover */
+.telegram-wrapper:hover {
+  background-color: #229ed9;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icon-wrapper:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-wrapper:hover {
+  background-color: #25d366;
+}
+
+.snapchat-wrapper:hover .social-icon,
+.x-wrapper:hover .social-icon,
+.instagram-wrapper:hover .social-icon {
+  filter: brightness(200%);
+}
+
+.snapchat-wrapper:hover {
+  background-color: #fffc00;
+}
+
 .x-wrapper:hover {
-  background-color: #ffffff; /* X black */
+  background-color: #ffffff;
 }
 
-/* Instagram Hover */
 .instagram-wrapper:hover {
   background: linear-gradient(
     45deg,
@@ -486,62 +437,50 @@ p {
   );
 }
 
-/* --- ICON WRAPPER BASE STYLING --- */
 .social-icon-wrapper {
-  /* ... other styles ... */
-  color: #000000; /* Default icon color (Black) */
-  /* ... other styles ... */
+  color: #000000;
 }
 
-/* --- HOVER EFFECTS --- */
-
-/* Hover for Snapchat, X, Instagram (Icons that need to turn WHITE) */
 .snapchat-wrapper:hover,
 .x-wrapper:hover,
 .instagram-wrapper:hover {
-  color: white; /* This will turn the 'currentColor' in the SVG white */
+  color: white;
 }
-/* Note: You may still need to use the `filter` for the WhatsApp icon if its SVG is complex. */
 
-/*media queries*/
 @media (max-width: 992px) {
-  /* --- ABOUT SECTION --- */
-  /* Ensure the 'about' columns stack vertically instead of staying side-by-side */
   .about .row > div.col {
-    flex: 0 0 100%; /* Take up the full width */
+    flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 30px; /* Add spacing between the stacked columns */
+    margin-bottom: 30px;
   }
 
-  /* Reduce the padding on the contact form to give content more space */
   .contact-us .form-column {
     padding: 0 15px;
     margin-bottom: 30px;
   }
 
-  /* --- TEAM SECTION --- */
-  /* Make Team columns stack on smaller screens too */
   .team .row > div.col-md-3 {
-    flex: 0 0 50%; /* Make them two-in-a-row */
+    flex: 0 0 50%;
     max-width: 50%;
+  }
+
+  .navbar-secondary a {
+    margin: auto;
   }
 }
 
 @media (max-width: 768px) {
-  /* --- NAVIGATION --- */
-  /* Primary Nav: Adjust font size */
   .navbar-primary a,
   .dcm-text {
     font-size: 0.9rem;
   }
 
-  /* Secondary Nav: Make links stack vertically or reduce margin significantly */
   .navbar-secondary nav {
-    align-items: center; /* Center them horizontally */
+    align-items: center;
   }
 
   .navbar-secondary a {
-    margin: 12px; /* Minimal vertical margin and no horizontal margin */
+    margin: 15px;
   }
 
   .scripture-box.active {
@@ -551,40 +490,35 @@ p {
     width: 500px;
   }
 
-  /* --- HERO/IMAGE SECTION --- */
-  /* Reduce the image height for mobile */
   .img-container img {
     height: 350px;
   }
 
-  /* Reduce font size of the quote */
   .img-text h2 {
     font-size: 1.2rem;
   }
 
-  /* --- ABOUT SECTION --- */
-  /* Reduce height and padding */
   .about {
-    height: auto; /* Allow content to dictate height */
+    height: auto;
     padding-top: 20px;
   }
 
-  /* Make the columns stack fully vertically (100% width) */
   .about .row > div.col {
     flex: 0 0 100%;
     max-width: 100%;
     padding: 0 20px;
   }
 
-  /* --- TEAM SECTION --- */
+  p {
+    text-align: center;
+  }
   .team {
     height: auto;
   }
-  /* Make Team members stack fully vertically (one per row) */
   .team .row > div.col-md-3 {
     flex: 0 0 100%;
     max-width: 100%;
-    padding: 0 30px; /* Add horizontal padding for breathing room */
+    padding: 0 30px;
   }
   .team img {
     max-width: 200px;
@@ -593,12 +527,10 @@ p {
     margin-right: auto;
   }
 
-  /* --- CONTACT SECTION --- */
   .contact-us {
     height: auto;
     padding-bottom: 40px;
   }
-  /* Contact form columns stack vertically */
   .contact-us .row {
     flex-direction: column;
   }
@@ -609,13 +541,11 @@ p {
     max-width: 100%;
   }
 
-  /* Ensure form inputs take full width on mobile */
   .glass-form .col-auto,
   .glass-form .col-12 {
     width: 100%;
   }
 
-  /* Center the social icons container */
   .social-icons-container {
     justify-content: center;
   }
