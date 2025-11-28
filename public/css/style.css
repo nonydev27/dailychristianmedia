@@ -480,8 +480,8 @@ p {
   }
 
   .navbar-secondary a {
-    margin: 15px;
-    font-size: medium;
+    margin: 10px;
+    font-size: small;
   }
 
   .scripture-box.active {
