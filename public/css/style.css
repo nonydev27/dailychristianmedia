@@ -484,11 +484,10 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 10px 0;
   }
 
   .navbar-secondary a {
-    margin: 16px;
+    margin: 18px;
   }
 
   .scripture-box.active {
