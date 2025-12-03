@@ -42,8 +42,7 @@ body {
   color: black;
   text-transform: uppercase;
   text-decoration: none;
-  /* margin-left: 35px; */
-  margin: 16px;
+  margin: auto;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   transition-duration: 2s;
@@ -60,19 +59,16 @@ body {
 }
 
 .img-container {
-  /* 1. KEY STEP: Makes this the reference point for absolute positioning */
   position: relative;
-  width: 100%; /* Makes the image responsive */
+  width: 100%;
   overflow: hidden;
 }
 
 .img-container img {
-  /* Ensures the image fills the container */
   display: block;
   width: 100%;
   opacity: 90%;
   height: 500px;
-  object-fit: cover;
 }
 
 .img-text {
@@ -155,8 +151,20 @@ p {
 
 .team img {
   width: 100%;
+  /* To ensure a perfect circle, you must enforce a square aspect ratio.
+     You can do this by setting a fixed height and using object-fit: cover,
+     or by setting a specific max-width/max-height. */
+  max-width: 250px; /* Example: limit size */
+  height: 250px; /* Example: enforce square height */
+  object-fit: cover; /* Ensures the image fills the container without stretching */
+
   margin-top: 20px;
+  margin-left: auto; /* Helps centering on some layouts */
+  margin-right: auto;
+  display: block;
+
   border: 5px solid rgb(230, 218, 218);
+  /* The key change for a perfect circle */
   border-radius: 50%;
 }
 .team .teamlead-title {
