@@ -480,12 +480,6 @@ p {
     font-size: 0.9rem;
   }
 
-  .navbar-secondary nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   .navbar-secondary a {
     margin: 15px;
   }
