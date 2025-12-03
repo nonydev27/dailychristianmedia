@@ -42,7 +42,7 @@ body {
   color: black;
   text-transform: uppercase;
   text-decoration: none;
-  margin: auto;
+  margin: 15px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   transition-duration: 2s;
@@ -470,7 +470,7 @@ p {
   }
 
   .navbar-secondary a {
-    margin: 16px;
+    margin: 20px;
   }
 }
 
