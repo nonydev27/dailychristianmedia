@@ -482,6 +482,7 @@ p {
 
   .navbar-secondary a {
     margin: 13px;
+    font-size: medium;
   }
 
   .scripture-box.active {
