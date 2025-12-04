@@ -65,10 +65,10 @@ body {
 }
 
 .img-container img {
-  display: block;
+  /* display: block;
   width: 100%;
   opacity: 90%;
-  height: 500px;
+  height: 500px; */
 }
 
 .img-text {
