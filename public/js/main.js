@@ -52,3 +52,25 @@ function closePopout() {
 devotionButton.addEventListener("click", openPopout);
 closeButton.addEventListener("click", closePopout);
 backdrop.addEventListener("click", closePopout);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".navbar-secondary nav a");
+
+  navLinks.forEach((link) => {
+    if (link.getAttribute("href").startsWith("#")) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const targetId = this.getAttribute("href");
+
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      });
+    }
+  });
+});
